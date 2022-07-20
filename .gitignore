@@ -1,0 +1,5 @@
+config.py
+.streamlit/secrets.toml
+api_creation/SpotIt_API/credentials.json
+v2/credentials.json
+api_creation/SpotIt_API/.cache
