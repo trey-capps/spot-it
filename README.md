@@ -18,4 +18,4 @@ These objects will be incorporated in python scripts to take the raw data and ev
 - Automating the ETL process
 
 # Final Dashboard
-Version 1 has been completed and the demo can be found [here] (https://youtu.be/dDmbO5_ccEc)
+Version 1 has been completed and the demo can be found here: https://youtu.be/dDmbO5_ccEc
