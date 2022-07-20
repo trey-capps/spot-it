@@ -12,14 +12,15 @@ class RedditFeatures:
         self.subreddit = self.data_field["subreddit"]
 
     def extract_all_features(self):
-        filter_data = {}
-        filter_data["name"] = self.name
-        filter_data["title"] = self.title
-        filter_data["num_comments"] = self.num_comments
-        filter_data["ups"] = self.ups
-        filter_data["upvote_ratio"] = self.upvote_ratio
-        filter_data["created"] = self.created
-        filter_data["url"] = self.url
-        filter_data["subreddit"] = self.subreddit
-
+        filter_data = {
+            "name": self.name,
+            "title": self.title,
+            "num_comments": self.num_comments,
+            "ups": self.ups,
+            "upvote_ratio": self.upvote_ratio,
+            "created": self.created,
+            "url": self.url,
+            "subreddit": self.subreddit
+        }
+        
         return filter_data
