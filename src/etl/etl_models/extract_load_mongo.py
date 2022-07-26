@@ -7,33 +7,37 @@ class ExtractLoadMongo:
         self.db_name = db_name
         self.collection_name = collection_name
 
-    def mongo_connect(self):
+    def mongo_client(self):
+        try:
+            return pymongo.MongoClient(self.mongo_string)
+        except Exception as e:
+            print(f"Error with client connection: {e}")
+            return None
+            
+    def mongo_database(self):
+        client = self.mongo_client()
+        return client[self.db_name]
         
-        client = pymongo.MongoClient(self.mongo_string)
-        
-        if self.db_name in client.list_databases():
-            db = client[self.db_name]
-        else:
-            print(f"{self.db_name} does not exist, please enter a database from the following: {client.list_databases()}")
-        
-        if self.collection in db.list_collection_names():
-            self.collection = db[self.collection_name]
-        else:
-            print(f"{self.collection_name} not in {self.db_name}")
+    def mongo_collection(self):
+        db = self.mongo_database()
+        return db[self.collection_name]
         
     def filter_subreddit_posts(self, subreddit):
         try:
-            cursor = self.collection.find({ "data.subreddit" : subreddit })
+            collection = self.mongo_collection()
+            cursor = collection.find({ "data.subreddit" : subreddit })
             subreddit_posts = list(cursor)
             return subreddit_posts
         except AttributeError:
             print("Collection not found, use the mongo_connect() method before you filter posts")
+            return None
     
     def upload_data(self, posts):
         duplicate = []
         for post in posts:
             try:
-                self.collection.insert_one(post)
+                collection = self.mongo_collection()
+                collection.insert_one(post)
             except pymongo.errors.DuplicateKeyError:
                 duplicate.append(1)
     
