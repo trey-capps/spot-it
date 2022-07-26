@@ -11,3 +11,4 @@ tests/experimentation/**
 .ipynb_checkpoints/config-checkpoint.py
 src/api_creation/SpotIt_API/credentials.json
 .DS_Store
+.__pycache__
