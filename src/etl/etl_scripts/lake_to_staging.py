@@ -39,7 +39,7 @@ def keep_only_songs(subreddit_imp_features, sub_class):
 def upload_to_staging(subreddit_clean):
     mongo_out = ExtractLoadMongo(MONGO_STR, MONGO_DB_OUT, MONGO_COL_OUT)
     mongo_out.mongo_connect()
-    mongo_out.upload_subreddit_posts(subreddit_clean)
+    mongo_out.upload_data(subreddit_clean)
     print(f"Uploaded {len(subreddit_clean)} post(s) to {MONGO_DB_OUT}:{MONGO_COL_OUT}")
 
 def main():

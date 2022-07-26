@@ -8,9 +8,18 @@ class ExtractLoadMongo:
         self.collection_name = collection_name
 
     def mongo_connect(self):
+        
         client = pymongo.MongoClient(self.mongo_string)
-        db = client[self.db_name]
-        self.collection = db[self.collection_name]
+        
+        if self.db_name in client.list_databases():
+            db = client[self.db_name]
+        else:
+            print(f"{self.db_name} does not exist, please enter a database from the following: {client.list_databases()}")
+        
+        if self.collection in db.list_collection_names():
+            self.collection = db[self.collection_name]
+        else:
+            print(f"{self.collection_name} not in {self.db_name}")
         
     def filter_subreddit_posts(self, subreddit):
         try:
@@ -20,7 +29,7 @@ class ExtractLoadMongo:
         except AttributeError:
             print("Collection not found, use the mongo_connect() method before you filter posts")
     
-    def upload_subreddit_posts(self, posts):
+    def upload_data(self, posts):
         duplicate = []
         for post in posts:
             try:
@@ -30,5 +39,5 @@ class ExtractLoadMongo:
     
         print('{0} records were not added becasue they are duplicates'.format(len(duplicate)))
     
-    def drop_subreddit_posts(self):
+    def drop_data(self):
         pass

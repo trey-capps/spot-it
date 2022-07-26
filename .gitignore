@@ -1,5 +1,12 @@
 config.py
 .streamlit/secrets.toml
-api_creation/SpotIt_API/credentials.json
 v2/credentials.json
 api_creation/SpotIt_API/.cache
+tests/experimentation/cosine_similar.ipynb
+tests/experimentation/extract_spotify.ipynb
+tests/experimentation/model.ipynb
+tests/experimentation/transform_subreddit.ipynb
+tests/experimentation/.ipynb_checkpoints/extract_spotify-checkpoint.ipynb
+tests/experimentation/**
+.ipynb_checkpoints/config-checkpoint.py
+src/api_creation/SpotIt_API/credentials.json
