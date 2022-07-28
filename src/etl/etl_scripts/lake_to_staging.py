@@ -43,11 +43,10 @@ def upload_to_staging(subreddit_clean):
     print(f"Uploaded {len(subreddit_clean)} post(s) to {MONGO_DB_OUT}:{MONGO_COL_OUT}")
 
 def main():
-    subreddit_classes = {"indieheads": ExtractIndieHeads} 
-    #{
-    #    "indieheads": ExtractIndieHeads,
-    #    "AlternativeRock": ExtractAlternativeRock
-    #}
+    subreddit_classes = {
+        "indieheads": ExtractIndieHeads, 
+        "AlternativeRock": ExtractAlternativeRock
+        }
 
     for sub_name in subreddit_classes:
         print(f"Begin ETL pipeline for {sub_name}")

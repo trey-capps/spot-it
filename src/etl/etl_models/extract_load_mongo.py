@@ -43,5 +43,15 @@ class ExtractLoadMongo:
     
         print('{0} records were not added becasue they are duplicates'.format(len(duplicate)))
     
+    def select_track_artist(self):
+        try:
+            collection = self.mongo_collection()
+            cursor = collection.find({}, {'artist': 1,  'track': 1})
+            track_artist = list(cursor)
+            return track_artist
+        except AttributeError:
+            print("Collection not found, use the mongo_connect() method before you filter posts")
+            return None
+
     def drop_data(self):
         pass
