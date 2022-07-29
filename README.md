@@ -13,21 +13,23 @@ These objects will be incorporated in python scripts to take the raw data and ev
 
 ```lake_to_staging.py``` is the first of many ETL scripts utilizing the custom classes created. 
 
+To add song data to the staged Reddit posts, we can use the ```ExtractSpotify``` class found in ```src/etl/etl_models``` directory.
+
+A script will be created to utilize the methods of this class.
+
 #### Next Steps
 - Integrating Spotify data into our subreddit data. 
 - Automating the ETL process
 
-## Experimentation
-This directory contains experimentation files
 
 ## Recommendation Models
-This directory contains models used to generate similarity metrics for songs. More methods have been explored (clustering found in experimentation/model.ipynb)
+This directory contains models used to generate similarity metrics for songs. More methods have been explored. Unsupervised model techniques have been explored in the ```src/recommendation_models``` directory. When the ETL and data warehouse is complete more robust recommendation models will be developed.
 
 ## API Creation
 This directory contains files to develop a RESTful API to support the future frontend development process
 
 ## dashboard.py
-This file contains code to develop version 1 streamlit dashboard. This web application will be expanded upon when the ETL and data storage development process is complete
+This file contains code to develop version 1 streamlit dashboard. This web application will be expanded upon when the ETL and data storage development process is complete.
 
 # Final Dashboard
 Version 1 has been completed and the demo can be found here: https://youtu.be/dDmbO5_ccEc

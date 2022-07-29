@@ -4,7 +4,6 @@ v2/credentials.json
 src/api_creation/SpotIt_API/.cache
 tests/experimentation/cosine_similar.ipynb
 tests/experimentation/extract_spotify.ipynb
-tests/experimentation/model.ipynb
 tests/experimentation/transform_subreddit.ipynb
 tests/experimentation/.ipynb_checkpoints/extract_spotify-checkpoint.ipynb
 tests/experimentation/**
