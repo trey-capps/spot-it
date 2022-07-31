@@ -9,7 +9,7 @@ from recommendation_models.cosine_similarity import generate_similar_songs, top_
 import pymongo
 import spotipy 
 import plotly.express as px
-import config
+import etl.config as config
 from datetime import datetime
 
 #Setup Database connection

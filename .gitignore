@@ -1,4 +1,3 @@
-config.py
 .streamlit/secrets.toml
 v2/credentials.json
 src/api_creation/SpotIt_API/.cache
@@ -11,3 +10,4 @@ tests/experimentation/**
 src/api_creation/SpotIt_API/credentials.json
 .DS_Store
 .__pycache__
+src/etl/config.py
