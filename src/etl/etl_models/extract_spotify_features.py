@@ -43,17 +43,16 @@ class ExtractSpotify:
         search_url = f"{base_url}?{search_data}"
         
         search_request = requests.get(search_url, headers=self.spotify_header)
-        return search_request.json()   
+        return search_request.json()
 
     def extract_track_uri(self, track, artist):
         search_json = self.extract_relevant_tracks(track, artist)
-        track_uri = search_json['tracks']['items'][0]['id']
-        track_identify = {
-            "track_uri": track_uri,
-            "track": track,
-            "artist": artist
-        }
-        return track_identify
+        try:
+            track_uri = search_json['tracks']['items'][0]['id']
+            return track_uri
+        except IndexError:
+            return None
+        
     
     def extract_audio_features(self, track_uri):
         audio_features_url = f"https://api.spotify.com/v1/audio-features/{track_uri}"

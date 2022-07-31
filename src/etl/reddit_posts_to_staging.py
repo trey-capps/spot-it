@@ -1,8 +1,9 @@
 from etl_models.extract_load_mongo import ExtractLoadMongo
 from etl_models.extract_reddit_features import RedditFeatures
 from etl_models.extract_reddit_songs_specific import ExtractAlternativeRock, ExtractIndieHeads
+import config
 
-MONGO_STR = ""
+MONGO_STR = config.mongocred
 MONGO_DB_IN = "TempPosts"
 MONGO_COL_IN = "CollectRaw"
 MONGO_DB_OUT = "TempPosts"
@@ -10,7 +11,7 @@ MONGO_COL_OUT = "PostStaging"
 
 def extract_data_from_mongo(subreddit_name):
         mongo_in = ExtractLoadMongo(MONGO_STR, MONGO_DB_IN, MONGO_COL_IN)
-        mongo_in.mongo_connect()
+        mongo_in.mongo_client()
         subreddit_posts = mongo_in.filter_subreddit_posts(subreddit_name)
         print("Extracted data from raw collection")
         return subreddit_posts
