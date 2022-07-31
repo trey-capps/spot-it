@@ -1,6 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-import config 
+import etl.config as config 
 
 client_credentials_manager = SpotifyClientCredentials(client_id=config.spotify_client_id, client_secret=config.spotify_secret_key)
 sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)

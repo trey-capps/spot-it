@@ -1,6 +1,7 @@
 from etl_models.extract_load_mongo import ExtractLoadMongo
+import config 
 
-MONGO_STR = ""
+MONGO_STR = config.mongo_cred
 MONGO_DB = "TempPosts"
 MONGO_COL_IN = "PostStaging"
 MONGO_COL_OUT = "SongStaging"

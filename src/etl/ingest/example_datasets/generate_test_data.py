@@ -1,4 +1,4 @@
-import config
+import etl.config as config
 import pymongo
 import pandas as pd
 
