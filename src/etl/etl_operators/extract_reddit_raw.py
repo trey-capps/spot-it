@@ -28,7 +28,8 @@ class ExtractReddit:
 
     def get_subreddit_data(self, subreddit):
         """
-            Generate post request with access tokens to gather post data
+        Generate post request with access tokens to gather post data
+        subreddit (str): Subreddit name
         """
         #Add testing as to whether that is an actual subreddit
         try:

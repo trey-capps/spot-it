@@ -40,9 +40,13 @@ def export_data(data_with_features):
     print(f"Exported data to {out_file}")
 
 def main():
+    #Connect to Spotify API
     spotify_connect()
+    #Load in data from temp. storage
     track_data = load_data()
+    #Append track data 
     track_data_with_features = append_track_features(track_data)
+    #Export tracks and their features
     export_data(track_data_with_features)
 
 if __name__ == "__main__":

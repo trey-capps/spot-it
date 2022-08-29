@@ -59,11 +59,14 @@ def main(params):
     ingest_subreddit = IngestSubreddit(subreddit, REDDIT_CREDS)
     extracted_data = ingest_subreddit.extract_data() 
 
+    #Check if file already exists
     if extracted_data:
         file_path = ingest_subreddit.FILE_PATH
+        #Append
         if ingest_subreddit.does_scrape_file_exist(file_path):
             ingest_subreddit.append_json(extracted_data, file_path)
             print(f"Appended new posts to {file_path}")
+        #Create New
         else:
             ingest_subreddit.dump_json(extracted_data, file_path)
 

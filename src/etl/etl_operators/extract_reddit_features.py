@@ -12,6 +12,7 @@ class RedditFeatures:
         self.subreddit = self.data_field["subreddit"]
 
     def extract_all_features(self):
+        """Subset the Reddit features of interest"""
         filter_data = {
             "name": self.name,
             "title": self.title,

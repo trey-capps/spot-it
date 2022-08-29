@@ -58,11 +58,13 @@ def main():
         raw_data = transform_subreddit.load_json()["data"]
         subset_data = transform_subreddit.select_important_features(raw_data)
         track_data = transform_subreddit.filter_tracks(subset_data)
-
+        #Check if file already exists
         if transform_subreddit.does_scrape_file_exist(out_path):
+            #Append
             transform_subreddit.append_json({"data": track_data}, out_path)
             print(f"Appended new posts to {out_path}")
         else:
+            #Create new file
             transform_subreddit.dump_json({"data": track_data}, out_path)
         
     except FileNotFoundError:

@@ -8,6 +8,7 @@ class ExtractLoadMongo:
         self.collection_name = collection_name
 
     def mongo_client(self):
+        """Establish connection with MongoDB using connection string"""
         try:
             return pymongo.MongoClient(self.mongo_string)
         except Exception as e:
@@ -15,14 +16,20 @@ class ExtractLoadMongo:
             return None
             
     def mongo_database(self):
+        """Create Mongo database instance"""
         client = self.mongo_client()
         return client[self.db_name]
         
     def mongo_collection(self):
+        """Create Mongo collection instance"""
         db = self.mongo_database()
         return db[self.collection_name]
         
     def filter_subreddit_posts(self, subreddit):
+        """
+        Subset Mongo data based on a subreddit of interest
+        subreddit (str): subreddit name 
+        """
         try:
             collection = self.mongo_collection()
             cursor = collection.find({ "data.subreddit" : subreddit })
@@ -33,6 +40,10 @@ class ExtractLoadMongo:
             return None
     
     def upload_data(self, posts):
+        """
+        Upload data to Mongo
+        posts (list): list of documents to be uploaded
+        """
         duplicate = []
         for post in posts:
             try:
@@ -44,6 +55,7 @@ class ExtractLoadMongo:
         print('{0} records were not added becasue they are duplicates'.format(len(duplicate)))
     
     def select_track_artist(self):
+        """Select only the documents containing 'track' and 'artists'"""
         try:
             collection = self.mongo_collection()
             cursor = collection.find({}, {'artist': 1,  'track': 1})
