@@ -10,13 +10,3 @@ resource "google_storage_bucket" "spot-it-tf-bucket" {
   versioning {
     enabled     = true
   }
-
-  lifecycle_rule {
-    action {
-      type = "Delete"
-    }
-    condition {
-      age = 30  // days
-    }
-  }
-}
