@@ -19,8 +19,4 @@ resource "google_storage_bucket" "spot-it-tf-bucket" {
       age = 30  // days
     }
   }
-
-  force_destroy = true
 }
-
-#GCP BigQuery Table
