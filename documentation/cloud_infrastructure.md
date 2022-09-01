@@ -16,6 +16,7 @@ Learn more about Terraform [here](https://www.terraform.io/intro).
 3. Terraform directory
 
 ``` cd SpotIt/src/terraform ```
+
 4. Setup configuration files 
 - ```main.tf```
     - This file is where we will define all resources will want to use/setup
@@ -31,6 +32,7 @@ Learn more about Terraform [here](https://www.terraform.io/intro).
     gcp_region = "[enter project region]"
     ...
     ```
+
 5. Initialize the directory
 
 Use the following: ```terraform init```
