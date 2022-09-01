@@ -1,5 +1,5 @@
 #GCP Cloud Storage Creation for Reddit-Spotify data
-resource "google_storage_bucket" "spot-it-tf-bucket" {
+resource "google_storage_bucket" "spot-it-storage-bucket" {
   project       = var.gcp_project
   name          = var.gcp_bucket_name
   location      = var.gcp_region
@@ -10,3 +10,4 @@ resource "google_storage_bucket" "spot-it-tf-bucket" {
   versioning {
     enabled     = true
   }
+}
