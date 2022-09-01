@@ -6,10 +6,10 @@ Version 1 has been completed and the demo can be found here: https://youtu.be/dD
 
 Current documentation sections found here:
 - [Purpose](#purpose)
-- [Cloud Infrastructure](documentation/cloud_infrastructure.md)
-- [ETL Pipeline](documentation/etl_documentaion/overview.md)
-- [Recommendation Models](documentation/models.md)
-- [API Creation](documentation/api_creation.md)
+- [Cloud Infrastructure](overview/cloud_infrastructure.md)
+- [ETL Pipeline](overview/etl_documentaion/overview.md)
+- [Recommendation Models](overview/models.md)
+- [API Creation](overview/api_creation.md)
 
 ## Purpose
 I have always enjoyed the recommendations Spotify provides for my playlists but sometimes they seem a bit redundant. I am always looking for new music and new artists. Reddit has been a place where I have been able to find songs but it requires some work. 

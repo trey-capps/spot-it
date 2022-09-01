@@ -1,17 +1,18 @@
+from typing import Dict
 from urllib.parse import urlencode
 import requests
 import base64
 
 class ExtractSpotify:
-    def __init__(self, client_id, secret):
+    def __init__(self, client_id: str, secret: str) -> None:
         self.client_id = client_id 
         self.secret = secret
     
-    def create_access_token_data(self):
+    def create_access_token_data(self) -> Dict:
         """Specify grant type"""
         return {"grant_type": "client_credentials"}
     
-    def create_access_token_headers(self):
+    def create_access_token_headers(self) -> Dict:
         """Create request headers for Spotify API"""
         credentials = f"{self.client_id}:{self.secret}"
         credentials_bytes = credentials.encode('ascii')
@@ -19,7 +20,7 @@ class ExtractSpotify:
         credentials_b64_header = credentials_b64_bytes.decode('ascii')
         return {"Authorization": f"Basic {credentials_b64_header}"}
     
-    def generate_access_token(self):
+    def generate_access_token(self) -> Dict:
         """Generate Spotify API access token"""
         auth_url = "https://accounts.spotify.com/api/token"
         token_data = self.create_access_token_data()
@@ -36,7 +37,7 @@ class ExtractSpotify:
         
         return token_data
 
-    def extract_relevant_tracks(self, track, artist):
+    def extract_relevant_tracks(self, track: str, artist: str) -> Dict:
         """
         Return the first displayed track from Spotify API request
         track (str): track name
@@ -52,7 +53,7 @@ class ExtractSpotify:
         search_request = requests.get(search_url, headers=self.spotify_header)
         return search_request.json()
 
-    def extract_track_uri(self, track, artist):
+    def extract_track_uri(self, track: str, artist: str) -> str:
         """
         Extract the track uri from the Spotify API request
         track (str): track name
@@ -65,7 +66,7 @@ class ExtractSpotify:
         except IndexError:
             return None
         
-    def extract_audio_features(self, track_uri):
+    def extract_audio_features(self, track_uri: str) -> str:
         """
         Extract audio feature data points for specified track_uri
         track_uri (str): track uri (provided from Spotify)

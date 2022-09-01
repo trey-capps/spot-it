@@ -1,4 +1,3 @@
-from email.mime import audio
 from etl_operators.extract_spotify_features import ExtractSpotify
 from transform_reddit_posts import TransformSubreddit
 import config 

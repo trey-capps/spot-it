@@ -1,6 +1,8 @@
+from typing import Dict
+
 class RedditFeatures:
     
-    def __init__(self, data_field):
+    def __init__(self, data_field: Dict) -> None:
         self.data_field = data_field
         self.name = self.data_field["name"]
         self.title = self.data_field["title"]
@@ -11,7 +13,7 @@ class RedditFeatures:
         self.url = self.data_field["url"]
         self.subreddit = self.data_field["subreddit"]
 
-    def extract_all_features(self):
+    def extract_all_features(self) -> Dict:
         """Subset the Reddit features of interest"""
         filter_data = {
             "name": self.name,

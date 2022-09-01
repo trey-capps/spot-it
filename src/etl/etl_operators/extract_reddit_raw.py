@@ -1,8 +1,9 @@
 import requests
+from typing import Dict
 
 class ExtractReddit:
 
-    def __init__(self, kwargs):
+    def __init__(self, kwargs) -> None:
         self.CLIENT_ID = kwargs["redditClientID"]
         self.SECRET_KEY = kwargs["redditSecretKey"]
         self.USERNAME = kwargs["redditUsername"]
@@ -14,7 +15,7 @@ class ExtractReddit:
         self.post_data = {"grant_type": "password", "username": f"{self.USERNAME}", "password": f"{self.PASS}"}
         self.headers = {"User-Agent": f"{self.USER_AGENT}"}
 
-    def get_access_token(self):
+    def get_access_token(self) -> Dict:
         """Get access token from Reddit API"""
         try:
             response = requests.post("https://www.reddit.com/api/v1/access_token", auth=self.client_auth, data=self.post_data, headers=self.headers)
@@ -26,10 +27,10 @@ class ExtractReddit:
             print(f"Error generating token, status code: {response.status_code}")
             return None
 
-    def get_subreddit_data(self, subreddit):
+    def get_subreddit_data(self, subreddit: str) -> object:
         """
         Generate post request with access tokens to gather post data
-        subreddit (str): Subreddit name
+        subreddit: Subreddit name
         """
         #Add testing as to whether that is an actual subreddit
         try:
