@@ -33,18 +33,16 @@ Learn more about Terraform [here](https://www.terraform.io/intro).
     ```
 5. Initialize the directory
 
-Use the following: 
+Use the following: ```terraform init```
 
-```terraform init```
 6. Create infrastructure
 
-Use the following:
+Use the following: ```terraform apply```
 
-```terraform apply```
 7. Terminate infrastructure
 
-If you want to terminate all the resources you created with Terraform use: 
+If you want to terminate all the resources you created with Terraform use: ```terraform destroy```
 
-```terraform destroy```
+---
 
 [Back to README](../README.md)
