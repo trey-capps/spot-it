@@ -24,13 +24,19 @@ def load_data():
 
 def append_track_features(track_data):
     new_data_with_features = []
-    for post in track_data:
-        artist = post["artist"]
-        track = post["track"]
-        track_uri = {"spotify_track_uri": extract_spotify.extract_track_uri(track, artist)}
-        audio_features = extract_spotify.extract_audio_features(track_uri["spotify_track_uri"])
-        spotify_data = {**post, **track_uri, **audio_features}
-        new_data_with_features.append(spotify_data)
+    # Need to fix this issue 
+    # Most likely occurs when no track is found
+    try:
+        for post in track_data:
+            artist = post["artist"]
+            track = post["track"]
+            track_uri = {"spotify_track_uri": extract_spotify.extract_track_uri(track, artist)}
+            audio_features = extract_spotify.extract_audio_features(track_uri["spotify_track_uri"])
+            spotify_data = {**post, **track_uri, **audio_features}
+            new_data_with_features.append(spotify_data)
+    except Exception as e:
+        print(e)
+        
     print(f"Added audio features for {len(new_data_with_features)} tracks")
     return new_data_with_features
 
