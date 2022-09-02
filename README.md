@@ -7,7 +7,7 @@ Version 1 has been completed and the demo can be found here: https://youtu.be/dD
 Current documentation sections found here:
 - [Purpose](#purpose)
 - [Cloud Infrastructure](overview/cloud_infrastructure.md)
-- [ETL Pipeline](overview/etl_documentaion/overview.md)
+- [ETL Pipeline](overview/etl_documentation/overview.md)
 - [Recommendation Models](overview/models.md)
 - [API Creation](overview/api_creation.md)
 

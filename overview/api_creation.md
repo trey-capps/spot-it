@@ -1,3 +1,3 @@
 # API Creation
 
-This directory contains the basic files to develop a REST API. This will be expanded when the data collection is complete. This API will be first be available to request songs (and respective data points) for certain subreddits. The second phase will allow users to send requests to generate song recommendations. This will also aid in the future development of the frontend application.
+This directory contains the basic files to develop a REST API with Flask. This will be expanded when the data collection is complete. This API will be first be available to request songs (and respective data points) for certain subreddits. The second phase will allow users to send requests to generate song recommendations. This will also aid in the future development of the frontend application.

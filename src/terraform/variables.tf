@@ -11,7 +11,7 @@ variable "gcp_project" {
 #Define GCP storage bucket region
 variable "gcp_region" {
   description = "Region for GCP resources"
-  default     = "us-east1"
+  default     = "US-EAST1"
   type        = string
 }
 

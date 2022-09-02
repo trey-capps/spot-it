@@ -12,4 +12,3 @@ tests/etl_tests/*
 src/etl/__pycache__
 src/terraform/*
 !*.tf
-src/airflow/*
