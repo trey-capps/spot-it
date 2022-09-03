@@ -7,6 +7,10 @@
 
 ## Steps in Initial Pipeline
 
+Change to the ```etl``` directory:
+
+``` cd ./src/etl ```
+
 ### Extract - Subreddit Raw posts
 ```ingest_reddit_raw.py``` is a python script that will collect the raw data from any subreddit and upload it to the ```temp_data``` staging directory
 
@@ -40,5 +44,3 @@ Example to upload to cloud storage:
 - Setup Big Query so each days data can be aggregated into a DW
 
 ---
-
-[Back to README](.../README.md)
