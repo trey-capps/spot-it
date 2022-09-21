@@ -1,13 +1,17 @@
 # Spot-it (In Progress)
 A tool to find Reddit songs that may be a good fit for your Spotify playlist
 
-Version 1 has been completed and the demo can be found here: https://youtu.be/dDmbO5_ccEc. Version 2 in the works!
+Version 1 has been completed and the demo can be found by clicking the image below... 
 
+[![Spot-It Video](https://img.youtube.com/vi/dDmbO5_ccEc/0.jpg)](https://www.youtube.com/watch?v=dDmbO5_ccEc)
 
-Current documentation sections found here:
+Version 2 in the works!
+
+Documentation of Current Progress found here:
 - [Purpose](#purpose)
 - [Cloud Infrastructure](overview/cloud_infrastructure.md)
-- [ETL Pipeline](overview/etl.md)
+- [Airflow Setup](overview/airflow_setup.md)
+- [ETL Tasks](overview/etl.md)
 - [Recommendation Models](overview/models.md)
 - [API Creation](overview/api_creation.md)
 
