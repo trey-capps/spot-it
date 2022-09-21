@@ -43,4 +43,36 @@ Example to upload to cloud storage:
 - Finish setting up Airflow
 - Setup Big Query so each days data can be aggregated into a DW
 
+
+
+## Airflow Setup via Docker
+
+All steps to setup Airflow come straight from the offical documentation found [here](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
+
+### Fetch the docker-compose.yaml
+
+```
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.4.0/docker-compose.yaml'
+```
+### Setup Environment
+
+#### File Directory With root User Ownership
+
+```mkdir -p ./logs ./plugins```
+```echo -e "AIRFLOW_UID=$(id -u)" > .env```
+
+#### Initialize Airflow Database
+
+```docker-compose up airflow-init```
+
+Login and password are both 'airflow' by default
+
+### Run Airflow
+
+```docker-compose up```
+
+### Airflow UI 
+
+```http://localhost:8080``` using username and password from [initialization](#initialize-airflow-database)
+
 ---

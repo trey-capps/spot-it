@@ -7,7 +7,7 @@ DAG to extract reddit posts, clean, merge, and add Spotify audio features, and l
 """
 
 #Add path to etl scripts
-FILE_PATH_SCRIPTS = ""
+FILE_PATH_SCRIPTS = "./etl_scripts"
 
 default_args = {
     "owner": "airflow", 
