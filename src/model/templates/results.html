@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block content %}
+<thead>
+    <tr>
+      <th>Playlist</th>
+	    <th>URI</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for name, uri in playlists.items() %}
+      <tr>
+        <th> {{ name }} </th>
+        <td> {{ uri }} </td>
+      </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

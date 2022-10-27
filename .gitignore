@@ -1,8 +1,7 @@
 venv/*
-src/api_creation/SpotIt_API/.cache
+src/deployment/.cache
 tests/experimentation/*
 .ipynb_checkpoints/config-checkpoint.py
-src/api_creation/SpotIt_API/credentials.json
 .DS_Store
 __pycache__
 src/airflow/etl_scripts/config.py
@@ -18,3 +17,5 @@ src/airflow/etl_scripts/__pycache__
 src/terraform/*
 !*.tf
 src/recommendation_models/.ipynb_checkpoints
+src/model/__pycache__
+src/model/credentials.py

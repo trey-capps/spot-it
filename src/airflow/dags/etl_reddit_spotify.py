@@ -19,7 +19,7 @@ default_args = {
 with DAG(
     dag_id="etl_reddit_spotify",
     description="Spot-It ETL",
-    schedule_interval="@daily",
+    schedule_interval="@once",
     default_args=default_args,
     catchup=False,
     max_active_runs=1,
