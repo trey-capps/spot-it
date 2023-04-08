@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spot It</title>
+</head>
+<body>
+    <h1>Please Select a Playlist to Begin</h1>
+    <select id="playlists">
+        {% for playlist in list_of_playlists %}
+            <option>{{ playlist }}</option>
+        {% endfor %}
+    </select>
+        
+        <div id="selected-playlist"></div>
+        
+        <script>
+          // Get the drop-down menu element
+          var dropdown = document.getElementById("playlists");
+          
+          // Get the selected value when the user clicks the menu
+          dropdown.addEventListener("change", function() {
+            var selectedPlaylist = dropdown.options[dropdown.selectedIndex].value;
+            
+            // Send an AJAX request to the Flask API endpoint
+            fetch('/recommend', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({playlist: selectedPlaylist})
+            })
+            .then(response => response.json())
+            .then(data => {
+              // Render the transformed data to the page
+              var selectedFruitsDiv = document.getElementById("selected-playlist");
+              selectedFruitsDiv.innerHTML = "You selected:";
+              var html = "You selected:<ul>";
+              data.results.forEach(function(result) {
+                  html += "<li>" + result + "</li>";
+              });
+              html += "</ul>";
+              selectedFruitDiv.innerHTML = html;
+            })
+        .catch(error => console.error(error));
+        });
+        </script>
+</body>
+</html>
